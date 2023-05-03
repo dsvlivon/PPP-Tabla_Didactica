@@ -1,0 +1,80 @@
+ion-content {
+  --background: -webkit-linear-gradient(bottom right, magenta, rgb(0, 140, 255));  
+  position: relative;
+}
+.theme-selector{ 
+  margin-top: 20px;
+  position:absolute;  
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+.btn-menu {
+  border: 0px;
+  border-radius: 50%;
+}
+
+
+.img-animal-vert {
+  width: 10rem;
+  height: 10rem;
+  object-fit: contain;
+  border-radius: 30px;
+}
+.img-animal-vert:active {
+  transform: scale(0.9);
+  box-shadow: 0 0 16px magenta;
+  transition: transform 0.3s;
+}
+
+.img-animal-hor {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 30px;
+}
+.img-animal-hor:active {
+  transform: scale(0.9);
+  box-shadow: 0 0 16px magenta;
+  transition: transform 0.3s;
+}
+
+.grid-vertical-animales {
+  height: 80%;
+  display: flex;
+  flex-flow: column;
+}
+
+.grid-horizontal-animales {
+  height: 80%;
+  display: flex;
+  flex-flow: column;
+}
+
+@media (min-height: 600px) {
+  .grid-vertical-animales {
+    display: flex;
+    margin-top: 6rem;
+    margin-left: 1rem;
+  }
+  .grid-horizontal-animales {
+    display: none;
+  }
+}
+
+@media (max-height: 600px) {
+  .grid-vertical-animales {
+    display: none;
+  }
+  .grid-horizontal-animales {
+    display: flex;
+  }
+  .img-back{
+    display: none;
+  }
+}

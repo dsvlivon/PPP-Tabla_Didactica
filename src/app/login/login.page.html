@@ -1,0 +1,93 @@
+<ion-content>
+
+  <ion-card class="superior">
+
+    <ion-img src="../../assets/images/header150x70_logo.png"></ion-img>
+
+    <ion-card-header>
+
+      <ion-card-title class="ion-no-margin">
+        Ingresar
+      </ion-card-title>
+
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <div class="wrapform">
+        <form [formGroup]="formData">
+          <div class="d-flex flex-column">
+
+            <div class="input-group justify-content-center">
+
+              <ion-item>
+                <ion-icon name="mail-outline" class="me-1"></ion-icon>
+                <ion-input formControlName="email" type="text" placeholder="Email"></ion-input>
+              </ion-item>
+
+              <ion-item lines="none">
+                <div *ngIf="(email.dirty || email.touched) && email.errors" class="errors">
+                  <p *ngIf="email.errors['required']">Email is required</p>
+                  <p *ngIf="email.errors['email']">Email is invalid</p>
+                </div>
+              </ion-item>
+
+            </div>
+
+            <br>
+            <div class="input-group justify-content-center">
+
+              <ion-item>
+                <ion-icon name="lock-closed-outline" class="me-1"></ion-icon>
+                <ion-input formControlName="password" type="password" placeholder="**********"></ion-input>
+              </ion-item>
+
+              <ion-item lines="none" class="ion-no-margin">
+                <div *ngIf="(password.dirty || password.touched) && password.errors" class="errors">
+                  <span *ngIf="password.errors['required']">Ingresar contraseña</span>
+                  <span *ngIf="password.errors['minlength']">Ingresar mínimo 6 digitos</span>
+                </div>
+              </ion-item>
+
+            </div>
+          </div>
+        </form>
+        <!-- <div class="password-forgot">
+            <ion-button fill="clear" class="ion-no-padding">Olvidó su contraseña?</ion-button>
+          </div> -->
+      </div>
+      <div class="signin-btns">
+        <ion-button (click)="onLogin()" fill="solid" shape="round" class="loginbtn">Login</ion-button>
+        <!-- <ion-button (click)="onRegister()" fill="solid" shape="round" class="registrobtn">Registrarse</ion-button> -->
+      </div>
+
+      <div class="errors text-center">
+        <p *ngIf="error === true">{{message}}</p>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+  <ion-footer>
+    <ion-item>
+      <div class="input-group justify-content-center">
+      <ion-button (click)="accesoRapidoAnonimo()">an</ion-button>
+      <ion-button (click)="accesoRapidoInvitado()">in</ion-button>
+      <ion-button (click)="accesoRapidoTester()">te</ion-button>
+    </div>
+      <!-- <ion-item>
+          <div class="input-group justify-content-center">
+          <input type="checkbox" [(ngModel)]="footer">
+          <p>Accesos Rápidos</p>
+          <div class="quickAcces-btns" *ngIf="footer">
+            <hr class="solid">    
+            <ion-footer>              
+                <ion-button (click)="accesoRapidoAnonimo()">an</ion-button>
+                <ion-button (click)="accesoRapidoInvitado()">in</ion-button>
+                <ion-button (click)="accesoRapidoTester()">te</ion-button>
+              </ion-footer>          
+            </div>
+          </div>
+        </ion-item> -->
+    </ion-item>
+  </ion-footer>
+</ion-content>
